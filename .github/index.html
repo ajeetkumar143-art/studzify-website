@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Studzify.education - Class 10th Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0; 
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+      letter-spacing: 1.5px;
+    }
+    .login-box {
+      max-width: 400px;
+      margin: 60px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #0072ff;
+      text-align: center;
+    }
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background: #0072ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .login-box button:hover {
+      background: #005ecb;
+    }
+    .admin-panel {
+      display: none;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>Studzify.education</header>
+
+  <div class="login-box">
+    <h2>Admin Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p id="login-error" style="color:red; text-align:center; margin-top:10px;"></p>
+  </div>
+
+  <div class="admin-panel" id="admin-panel">
+    <h2>Welcome Admin</h2>
+    <p>You are now logged in to the Studzify Admin Panel.</p>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const error = document.getElementById('login-error');
+
+      if (user === 'admin' && pass === 'studzify123') {
+        document.querySelector('.login-box').style.display = 'none';
+        document.getElementById('admin-panel').style.display = 'block';
+      } else {
+        error.textContent = 'गलत username या password';
+      }
+    }
+  </script>
+</body>
+</html>
